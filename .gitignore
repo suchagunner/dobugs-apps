@@ -105,3 +105,7 @@ dist
 
 # Environment Configuration
 .env
+
+# Build Files
+dist/
+build/
