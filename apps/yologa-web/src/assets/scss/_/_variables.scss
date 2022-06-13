@@ -1,0 +1,64 @@
+@function unit($size) {
+  @return calc(#{$size} * 0.625rem);
+}
+
+// Viewport
+$site-width-a: 1920px; // 1920
+$site-width-b: 1440px; // 1440
+$site-width-c: 1280px; // 1280
+$site-width-d: 1120px; // 1120
+$site-width-e: 960px; // 960
+$site-width-f: 800px; // 800
+$site-width-g: 640px; // 640
+$site-width-h: 480px; // 480
+$site-width-i: 320px; // 320
+$max-content-width: 568px;
+
+// Font
+$font-size_extra-large: unit(4.8);
+$font-size_large: unit(3.2);
+$font-size_little-large: unit(2);
+$font-size_normal: unit(1.6);
+$font-size_small: unit(1.4);
+$font-size_extra-small: unit(1.2);
+
+$radius: unit(0.3);
+
+$color-danger: rgb(230, 20, 20);
+
+$color-gray-0: rgb(248, 249, 250);
+$color-gray-1: rgb(241, 243, 245);
+$color-gray-2: rgb(233, 236, 239);
+$color-gray-3: rgb(222, 226, 230);
+$color-gray-4: rgb(206, 212, 218);
+$color-gray-5: rgb(173, 181, 189);
+$color-gray-6: rgb(134, 142, 150);
+$color-gray-7: rgb(97, 103, 108);
+$color-gray-8: rgb(52, 58, 64);
+$color-gray-9: rgb(0, 0, 0);
+$color-black: $color-gray-9;
+$color-white: rgb(255, 255, 255);
+$color-shadow: rgba(0, 0, 0, 0.5);
+$color-shadow-light: rgba(0, 0, 0, 0.25);
+
+$color-red: rgb(230, 20, 20);
+$color-red-bright: rgb(250, 60, 60);
+$color-red-dark: rgb(200, 0, 0);
+
+$color-green: rgb(43, 138, 62);
+$color-green-bright: rgb(60, 250, 60);
+$color-green-dark: rgb(0, 200, 0);
+
+$color-blue: rgb(20, 20, 230);
+$color-blue-bright: rgb(60, 60, 250);
+$color-blue-dark: rgb(0, 0, 200);
+
+$color-google: rgb(234, 67, 53);
+$color-google-bright: rgb(254, 87, 73);
+$color-google-dark: rgb(194, 27, 13);
+
+$color-facebook: rgb(60, 88, 152);
+$color-facebook-bright: rgb(80, 108, 172);
+$color-facebook-dark: rgb(20, 48, 112);
+
+$color-bg: $color-gray-0;

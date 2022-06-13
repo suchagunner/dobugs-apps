@@ -1,0 +1,27 @@
+{
+  "name": "dobugs-apps",
+  "private": "true",
+  "version": "1.0.0",
+  "description": "dobugs front-end mono-repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suchagunner/dobugs-apps.git"
+  },
+  "keywords": [
+    "dobugs"
+  ],
+  "author": "dobugs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suchagunner/dobugs-apps/issues"
+  },
+  "homepage": "https://github.com/suchagunner/dobugs-apps#readme",
+  "dependencies": {
+    "load-script": "^2.0.0",
+    "lodash": "^4.17.21"
+  }
+}
