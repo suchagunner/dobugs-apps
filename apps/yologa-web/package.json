@@ -25,7 +25,8 @@
     "recoil": "^0.7.3",
     "shelljs": "^0.8.5",
     "typescript": "^4.7.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "lottie-web": "^5.9.4"
   },
   "scripts": {
     "start:dev": "cp ./env/.env.dev ./.env && react-scripts start",
@@ -34,7 +35,7 @@
     "build:prod": "cp ./env/.env.prod ./.env && react-scripts build",
     "deploy:dev": "node scripts/deploy.js dev",
     "deploy:prod": "node scripts/deploy.js prod",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "lint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore --fix src",
     "format": "prettier .  --write",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

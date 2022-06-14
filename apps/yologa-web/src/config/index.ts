@@ -16,7 +16,8 @@ type Mode = string | keyof typeof ConfigMode;
 export class Config {
   private static instance: Config;
 
-  public readonly mode: Mode = process.env.VUE_APP_MODE || process.env.NODE_ENV;
+  public readonly mode: Mode =
+    process.env.REACT_APP_MODE || process.env.NODE_ENV;
 
   private readonly productionConfig = productionConfig;
 
@@ -117,7 +118,7 @@ export class Config {
       "font-family: Roboto; font-size: 32px; color: #008fff; font-weight: bold;";
     const c2 =
       "font-family: Roboto; font-size: 10px; color: #000000; font-weight: 500;";
-    const text = `%c Lugstay %cv${this.version}`;
+    const text = `%c dobugs %cv${this.version}`;
 
     window.console.log(text, c1, c2);
   }

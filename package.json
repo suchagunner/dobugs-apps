@@ -1,6 +1,6 @@
 {
   "name": "dobugs-apps",
-  "private": "true",
+  "private": true,
   "version": "1.0.0",
   "description": "dobugs front-end mono-repository",
   "main": "index.js",
@@ -19,9 +19,5 @@
   "bugs": {
     "url": "https://github.com/suchagunner/dobugs-apps/issues"
   },
-  "homepage": "https://github.com/suchagunner/dobugs-apps#readme",
-  "dependencies": {
-    "load-script": "^2.0.0",
-    "lodash": "^4.17.21"
-  }
+  "homepage": "https://github.com/suchagunner/dobugs-apps#readme"
 }
