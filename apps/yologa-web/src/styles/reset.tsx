@@ -20,7 +20,7 @@ const reset = css`
     font-family: inherit;
     line-height: inherit;
     letter-spacing: inherit;
-    word-break: inherit;
+    word-break: keep-all;
     word-spacing: inherit;
     color: inherit;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
