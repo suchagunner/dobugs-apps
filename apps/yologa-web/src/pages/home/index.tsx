@@ -1,5 +1,5 @@
-function PageSpaces() {
-  return <main> Home </main>;
+function PageHome() {
+  return <main> </main>;
 }
 
-export default PageSpaces;
+export default PageHome;
