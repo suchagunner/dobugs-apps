@@ -1,3 +1,7 @@
 {
-  "web": "https://yologa.dobugs.co.kr"
+  "web": "https://yologa.dobugs.co.kr",
+
+  "keys": {
+    "kakaoDevelopers": "6a98f05439d21d5fde38b26ebdffd010"
+  }
 }
