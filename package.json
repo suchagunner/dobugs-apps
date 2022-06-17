@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/suchagunner/dobugs-apps/issues"
   },
-  "homepage": "https://github.com/suchagunner/dobugs-apps#readme"
+  "homepage": "https://github.com/suchagunner/dobugs-apps#readme",
+  "dependencies": {
+    "get-user-locale": "^1.4.0"
+  }
 }

@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import Btn from "components/atoms/Btn";
 import TravelersRangePicker from "components/commons/TravelersRangePicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import page, { pageHeader } from "styles/page";
 
@@ -23,9 +24,11 @@ const rangePickerSection = css`
 `;
 
 const buttonSection = css`
-  position: sticky;
+  position: fixed;
+  left: 0;
   bottom: 0;
-  height: 5rem;
+  width: 100%;
+  padding: 1.6rem;
 `;
 
 const buttonStyle = css`
@@ -52,16 +55,15 @@ function PageHome() {
           max={5}
           value={travelersCnt}
           onChange={(cnt: number) => setTravelersCnt(cnt)}
-        ></TravelersRangePicker>
+        />
       </section>
       <section css={buttonSection}>
-        <button
-          type="button"
+        <Btn
           css={buttonStyle}
           onClick={() => navigate(`/spaces?travelers=${travelersCnt}`)}
         >
           여행지 욜로가기!
-        </button>
+        </Btn>
       </section>
     </main>
   );

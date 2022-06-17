@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface TravelersRangePickerProps {
   min: number;
@@ -14,12 +14,12 @@ const formStyle = css`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3.6rem;
+    gap: 1.2rem;
 
     & > span {
       font-size: 6.4rem;
       font-weight: bold;
-      min-width: 40px;
+      width: 11.2rem;
       text-align: center;
     }
 
@@ -59,6 +59,10 @@ function TravelersRangePicker({
       setCount(cb);
     };
   }
+
+  useEffect(() => {
+    onChange(count);
+  }, [count]);
 
   return (
     <form css={formStyle}>

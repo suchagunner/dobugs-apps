@@ -5,6 +5,7 @@ import { appHeaderHeight } from "./layout";
 const page = css`
   background-color: white;
   width: 100%;
+  min-width: 320px;
   max-width: 568px;
   margin: auto;
   min-height: 100vh;

@@ -30,10 +30,10 @@ function saveManifest(manifest) {
       JSON.stringify(manifest, null, 2),
       function (err) {
         if (err) {
-          console.log(err);
+          console.info(err);
           reject(err);
         } else {
-          console.log("Manifest saved ", manifest.version);
+          console.info("Manifest saved ", manifest.version);
           resolve(manifest);
         }
       },
@@ -48,10 +48,10 @@ function savePackage(packageFile) {
       JSON.stringify(packageFile, null, 2),
       function (err) {
         if (err) {
-          console.log(err);
+          console.info(err);
           reject(err);
         } else {
-          console.log("package saved ", packageFile.version);
+          console.info("package saved ", packageFile.version);
           resolve(packageFile);
         }
       },

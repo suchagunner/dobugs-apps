@@ -1,3 +1,4 @@
+import { SerializedStyles } from "@emotion/react";
 import React from "react";
 
 interface BtnProps {
@@ -6,21 +7,19 @@ interface BtnProps {
   color?: string;
   background?: string;
   onClick(e: React.MouseEvent<HTMLButtonElement>): void;
+  css?: SerializedStyles;
 }
 
-function Btn({
-  label,
-  size,
-  color = "#fffff",
-  background = "#000000",
-  onClick,
-}: BtnProps) {
+function Btn(props: React.PropsWithChildren<BtnProps>) {
   function handleBtnClick(e: React.MouseEvent<HTMLButtonElement>) {
-    e.stopPropagation();
-    onClick?.(e);
+    props.onClick(e);
   }
 
-  return <button onClick={handleBtnClick}>{label}</button>;
+  return (
+    <button {...props} onClick={handleBtnClick}>
+      {props.children}
+    </button>
+  );
 }
 
 export default Btn;

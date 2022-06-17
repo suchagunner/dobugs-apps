@@ -1,6 +1,5 @@
 const getUserLocale = require("get-user-locale").default;
 const productionConfig = require("./conf.d/config.production.json");
-const stagingConfig = require("./conf.d/config.staging.json");
 const developmentConfig = require("./conf.d/config.development.json");
 const debugConfig = require("./conf.d/config.debug.json");
 
@@ -21,22 +20,18 @@ export class Config {
 
   private readonly productionConfig = productionConfig;
 
-  private readonly stagingConfig = stagingConfig;
-
   private readonly developmentConfig = developmentConfig;
 
   private readonly debugConfig = debugConfig;
 
   private config: any;
 
+  public readonly version = process.env.REACT_APP_MODE;
+
   public readonly userLocale = getUserLocale();
 
   public static getInstance() {
     return Config.instance ?? new Config();
-  }
-
-  get version() {
-    return process.env.VUE_APP_VERSION;
   }
 
   get apiServer() {
@@ -55,25 +50,6 @@ export class Config {
     return this.config.app;
   }
 
-  get isIos() {
-    return (
-      [
-        "iPad Simulator",
-        "iPhone Simulator",
-        "iPod Simulator",
-        "iPad",
-        "iPhone",
-        "iPod",
-      ].includes(navigator.platform) ||
-      // iPad on iOS 13 detection
-      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-    );
-  }
-
-  get isAndroid() {
-    return /(android)/i.test(navigator.userAgent);
-  }
-
   parseConfig(mode: Mode) {
     try {
       let content = this.developmentConfig;
@@ -82,8 +58,6 @@ export class Config {
         content = this.debugConfig;
       } else if (mode === ConfigMode.DEVELOPMENT) {
         content = this.developmentConfig;
-      } else if (mode === ConfigMode.STAGING) {
-        content = this.stagingConfig;
       } else if (mode === ConfigMode.PRODUCTION) {
         content = this.productionConfig;
       }
@@ -120,7 +94,7 @@ export class Config {
       "font-family: Roboto; font-size: 10px; color: #000000; font-weight: 500;";
     const text = `%c dobugs %cv${this.version}`;
 
-    window.console.log(text, c1, c2);
+    window.console.info(text, c1, c2);
   }
 }
 

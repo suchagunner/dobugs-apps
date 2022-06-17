@@ -28,3 +28,7 @@ interface ParametersEntity {
 interface Responses {
   [number]: number;
 }
+
+interface Window {
+  kakao: any;
+}
