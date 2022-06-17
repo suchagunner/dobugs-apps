@@ -37,7 +37,7 @@ function PageHome() {
   const navigate = useNavigate();
 
   return (
-    <main css={[page, pageHomeStyle]}>
+    <div css={[page, pageHomeStyle]}>
       <h1 css={pageHeader}>몇 명이서 여행가실 계획이신가요?</h1>
       <section css={rangePickerSection}>
         <TravelersRangePicker
@@ -55,7 +55,7 @@ function PageHome() {
           여행지 욜로가기!
         </Btn>
       </section>
-    </main>
+    </div>
   );
 }
 

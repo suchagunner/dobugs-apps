@@ -1,20 +1,37 @@
 import loadScript from "load-script";
 
-export default function load(kakaoMapKey: Nullable<string>) {
-  return new Promise<any>((resolve, reject) => {
-    loadScript(
-      `//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoMapKey}&autoload=false`,
-      (error, script) => {
-        if (error) {
-          alert(error);
-          reject(error);
-          return;
-        }
+export default class SDK {
+  private isLoaded = false;
 
-        window.kakao.maps.load(() => {
-          resolve(window.kakao);
-        });
-      },
-    );
-  });
+  private appKey: Nullable<string>;
+
+  constructor(kakaoMapKey: Nullable<string>) {
+    this.appKey = kakaoMapKey;
+    this.load();
+  }
+
+  load() {
+    return new Promise<any>((resolve, reject) => {
+      if (this.isLoaded) {
+        resolve(window.kakao);
+        return;
+      }
+
+      loadScript(
+        `//dapi.kakao.com/v2/maps/sdk.js?appkey=${this.appKey}&autoload=false`,
+        (error, script) => {
+          if (error) {
+            alert(error);
+            reject(error);
+            return;
+          }
+
+          window.kakao.maps.load(() => {
+            this.isLoaded = true;
+            resolve(window.kakao);
+          });
+        },
+      );
+    });
+  }
 }

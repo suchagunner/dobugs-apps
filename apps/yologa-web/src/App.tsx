@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import { RecoilRoot } from "recoil";
 import { IntlProvider } from "react-intl";
 import { Global } from "@emotion/react";
+import AppReadyContext from "store/context/app.ready";
+import Layout from "layouts/Layout";
 
 import reset from "./styles/reset";
-import Router from "./routers";
-import LoadingLayer from "./layouts/LoadingLayer";
+import LoadingLayer from "./components/commons/LoadingLayer";
 
 function App() {
   const [ready, setReady] = useState(false);
@@ -21,11 +22,13 @@ function App() {
 
   return (
     <IntlProvider locale={"ko-KR"}>
-      <RecoilRoot>
-        <Global styles={reset} />
-        <LoadingLayer isOpened={!ready} />
-        {ready ? <Router /> : <></>}
-      </RecoilRoot>
+      <AppReadyContext.Provider value={ready}>
+        <RecoilRoot>
+          <Global styles={reset} />
+          <LoadingLayer isOpened={!ready} />
+          <Layout />
+        </RecoilRoot>
+      </AppReadyContext.Provider>
     </IntlProvider>
   );
 }

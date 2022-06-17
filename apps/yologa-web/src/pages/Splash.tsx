@@ -36,11 +36,11 @@ function PageSplash() {
   });
 
   return (
-    <main css={page}>
+    <div css={page}>
       <h1 ref={header} css={splashStyle}>
         환영합니다!
       </h1>
-    </main>
+    </div>
   );
 }
 

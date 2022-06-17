@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import MapCanvas from "components/commons/kakao.map";
+import KakaoMap from "components/commons/kakao.map";
 import config from "config";
 import { useCallback, useEffect, useRef } from "react";
 import page from "styles/page";
@@ -10,21 +10,23 @@ function PageSpaces() {
   const mapRef = useRef(null);
   const onLoad = useCallback((map: any) => {
     mapRef.current = map;
+    console.log(mapRef.current);
   }, []);
 
-  useEffect(() => {}, [mapRef]);
-
   return (
-    <main css={[page]}>
-      <MapCanvas
+    <div css={[page]}>
+      <KakaoMap
         mapKey={KAKAO_MAP_KEY}
         options={{
-          center: [33.450701, 126.570667],
-          level: 3,
+          center: {
+            latitude: 37.517235,
+            longitude: 127.047325,
+          },
+          level: 7,
         }}
         onLoad={onLoad}
       />
-    </main>
+    </div>
   );
 }
 

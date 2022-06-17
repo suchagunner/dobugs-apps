@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
-import { useEffect, useRef } from "react";
-import loadSdk from "./lib/sdk";
+import useEffectOnce from "hooks/effect.once";
+import { useCallback, useEffect, useRef, useState } from "react";
+import SDK from "./lib/sdk";
 
 interface KakaoMapOptions {
-  center: Array<string | number>;
+  center: { latitude: string | number; longitude: string | number };
   [propName: string | number | symbol]: any;
 }
 
@@ -18,18 +19,25 @@ interface MapCanvasProps extends KakaoMapInterface {
 }
 
 function MapCanvas(props: React.PropsWithChildren<MapCanvasProps>) {
+  const [initialized, setInitialized] = useState(false);
   const $mapDivRef = useRef(null);
   const mapRef = useRef(null);
   const { mapKey, options } = props;
 
-  useEffect(() => {
-    loadSdk(mapKey).then((kakao) => {
+  const initialize = useCallback(() => {
+    const { latitude, longitude } = options.center;
+    const sdk = new SDK(mapKey);
+    sdk.load().then((kakao) => {
       mapRef.current = new kakao.maps.Map($mapDivRef.current, {
         ...options,
-        center: new kakao.maps.LatLng(options.center[0], options.center[1]),
+        center: new kakao.maps.LatLng(latitude, longitude),
       });
     });
-  }, []);
+  }, [mapRef]);
+
+  useEffectOnce(() => {
+    initialize();
+  });
 
   return (
     <div

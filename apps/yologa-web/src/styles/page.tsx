@@ -5,10 +5,11 @@ import { appHeaderHeight } from "./layout";
 const page = css`
   background-color: white;
   width: 100%;
-  min-width: 320px;
+  min-width: 280px;
   max-width: 568px;
   margin: auto;
   min-height: 100vh;
+  min-height: calc(var(--vh) * 100);
   padding: ${appHeaderHeight} 1.6rem 1.6rem 1.6rem !important ;
 `;
 

@@ -29,7 +29,7 @@ function Page404() {
   const navigate = useNavigate();
 
   return (
-    <main css={[page, page404Style]}>
+    <div css={[page, page404Style]}>
       <h1 css={pageHeader} className="page__header">
         페이지가 존재하지 않습니다.
       </h1>
@@ -50,7 +50,7 @@ function Page404() {
           홈으로 가기
         </Btn>
       </section>
-    </main>
+    </div>
   );
 }
 
