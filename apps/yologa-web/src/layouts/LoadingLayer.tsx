@@ -30,7 +30,7 @@ function loadingLayer({ isOpened }: Props) {
     <>
       {isOpened ? (
         <div css={fixedLayer}>
-          <Lottie value={SpinnerBlue} width={50} height={50} />
+          <Lottie value={SpinnerBlue} width={120} height={120} />
         </div>
       ) : (
         <></>

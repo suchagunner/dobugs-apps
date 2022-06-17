@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import LottiePlayer from "lottie-web";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface LottieOptions {
   isStopped?: boolean;
@@ -19,8 +19,8 @@ const LottieWrapperStyle = css`
 `;
 
 const LottiePlayerStyle = css`
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
+  height: auto;
   margin: auto;
 `;
 
@@ -32,10 +32,9 @@ function Lottie({
   height = 100,
 }: LottieOptions) {
   const player = useRef<HTMLDivElement>(null);
-  let playing = false;
-
-  useEffect(() => {
-    if (playing) {
+  const playing = useRef(false);
+  const loadAnimation = useCallback(() => {
+    if (playing.current) {
       return;
     }
 
@@ -50,12 +49,25 @@ function Lottie({
       },
     });
 
-    playing = true;
-  });
+    playing.current = true;
+  }, [player]);
+
+  useEffect(() => {
+    loadAnimation();
+  }, []);
 
   return (
     <div css={LottieWrapperStyle}>
-      <div css={LottiePlayerStyle} ref={player}></div>
+      <div
+        css={[
+          LottiePlayerStyle,
+          {
+            maxWidth: `${width}px`,
+            height: `${height}px`,
+          },
+        ]}
+        ref={player}
+      ></div>
     </div>
   );
 }

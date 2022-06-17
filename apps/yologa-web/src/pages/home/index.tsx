@@ -4,6 +4,7 @@ import Btn from "components/atoms/Btn";
 import TravelersRangePicker from "components/commons/TravelersRangePicker";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { solidButtonStyle } from "styles/atoms";
 import page, { pageHeader } from "styles/page";
 
 const pageHomeStyle = css`
@@ -31,17 +32,6 @@ const buttonSection = css`
   padding: 1.6rem;
 `;
 
-const buttonStyle = css`
-  display: block;
-  width: 100%;
-  color: white;
-  font-weight: 500;
-  font-size: 1.6rem;
-  background: black;
-  border-radius: 3px;
-  height: 5rem;
-`;
-
 function PageHome() {
   const [travelersCnt, setTravelersCnt] = useState(2);
   const navigate = useNavigate();
@@ -59,7 +49,7 @@ function PageHome() {
       </section>
       <section css={buttonSection}>
         <Btn
-          css={buttonStyle}
+          css={solidButtonStyle}
           onClick={() => navigate(`/spaces?travelers=${travelersCnt}`)}
         >
           여행지 욜로가기!
