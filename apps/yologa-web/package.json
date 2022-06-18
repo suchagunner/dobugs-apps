@@ -1,6 +1,6 @@
 {
   "name": "yologa-web",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.9.0",
