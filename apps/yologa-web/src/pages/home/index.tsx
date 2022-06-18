@@ -42,7 +42,7 @@ function PageHome() {
       <section css={rangePickerSection}>
         <TravelersRangePicker
           min={1}
-          max={5}
+          max={100}
           value={travelersCnt}
           onChange={(cnt: number) => setTravelersCnt(cnt)}
         />
