@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from "@emotion/react";
 import useEffectOnce from "hooks/effect.once";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

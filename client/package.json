@@ -22,5 +22,8 @@
   "homepage": "https://github.com/suchagunner/dobugs-apps#readme",
   "dependencies": {
     "get-user-locale": "^1.4.0"
+  },
+  "devDependencies": {
+    "customize-cra": "^1.0.0"
   }
 }

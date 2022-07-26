@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import LottiePlayer from "lottie-web";
 import { useCallback, useEffect, useRef, useState } from "react";

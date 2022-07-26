@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Lottie from "components/atoms/Lottie";
 import { useNavigate } from "react-router-dom";

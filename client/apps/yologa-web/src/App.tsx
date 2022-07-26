@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useEffect, useState } from "react";
 import { RecoilRoot } from "recoil";
 import { IntlProvider } from "react-intl";
