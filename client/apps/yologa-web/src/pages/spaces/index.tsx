@@ -41,10 +41,6 @@ function PageSpaces() {
     setPlaying(true);
   });
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div css={[page]}>
       <KakaoMap

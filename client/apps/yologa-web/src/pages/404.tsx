@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
+import {css} from "@emotion/react";
 import Lottie from "components/atoms/Lottie";
-import { useNavigate } from "react-router-dom";
-import { solidButtonStyle } from "styles/atoms";
-import page, { pageHeader } from "styles/page";
+import {useNavigate} from "react-router-dom";
+import {solidButtonStyle} from "styles/atoms";
+import page, {pageHeader} from "styles/page";
 import NotFound from "assets/lotties/not-found.json";
 
 import Btn from "../components/atoms/Btn";
@@ -25,32 +25,32 @@ const buttonSection = css`
 `;
 
 function Page404() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  return (
-    <div css={[page, page404Style]}>
-      <h1 css={pageHeader} className="page__header">
-        페이지가 존재하지 않습니다.
-      </h1>
+    return (
+        <div css={[page, page404Style]}>
+            <h1 css={pageHeader} className="page__header">
+                페이지가 존재하지 않습니다.
+            </h1>
 
-      <section
-        css={css`
-          margin: 4.8rem 0;
-        `}
-      >
-        <Lottie value={NotFound} width={320} height={240} />
-      </section>
+            <section
+                css={css`
+                  margin: 4.8rem 0;
+                `}
+            >
+                <Lottie value={NotFound} width={320} height={240}/>
+            </section>
 
-      <section css={buttonSection}>
-        <Btn
-          css={solidButtonStyle}
-          onClick={() => navigate("/", { replace: true })}
-        >
-          홈으로 가기
-        </Btn>
-      </section>
-    </div>
-  );
+            <section css={buttonSection}>
+                <Btn
+                    css={solidButtonStyle}
+                    onClick={() => navigate("/", {replace: true})}
+                >
+                    홈으로 가기
+                </Btn>
+            </section>
+        </div>
+    );
 }
 
 export default Page404;
