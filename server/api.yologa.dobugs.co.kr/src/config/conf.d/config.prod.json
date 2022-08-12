@@ -1,0 +1,19 @@
+{
+  "port": 3301,
+  "host": {
+    "ver": "prod",
+    "web": "https://yologa.dobugs.co.kr",
+    "api": "http://api.yologa.dobugs.co.kr"
+  },
+  "database": {
+    "mysql": {
+      "host": "http://yologa-mysql.cb0mup0inuqk.us-east-1.rds.amazonaws.com/",
+      "port": 3306,
+      "user": "admin",
+      "password": "mysql.yologa.dobugs.co.kr",
+      "database": "yologa",
+      "charset": "utf8mb4",
+      "timezone": "utc"
+    }
+  }
+}

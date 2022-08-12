@@ -1,0 +1,19 @@
+{
+  "port": 3301,
+  "host": {
+    "ver": "dev",
+    "web": "https://localhost:3000",
+    "api": "http://localhost:3301"
+  },
+  "database": {
+    "mysql": {
+      "host": "127.0.0.1",
+      "port": 3306,
+      "user": "admin",
+      "password": "mysql.yologa.dobugs.co.kr",
+      "database": "yologa",
+      "charset": "utf8mb4",
+      "timezone": "utc"
+    }
+  }
+}
