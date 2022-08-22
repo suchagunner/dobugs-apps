@@ -2,10 +2,9 @@ import { css } from "@emotion/react";
 import { appHeaderHeight } from "./layout";
 
 const page = css`
-  background-color: white;
   width: 100%;
   min-width: 280px;
-  max-width: 568px;
+  max-width: 690px;
   margin: auto;
   min-height: 100vh;
   min-height: calc(var(--vh) * 100);
