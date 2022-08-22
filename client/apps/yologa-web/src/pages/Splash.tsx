@@ -68,7 +68,9 @@ function PageSplash() {
     `}>
       <h1 ref={header} css={splashStyle}>
         <img
-          src={require('@/assets/images/yologa-main-text.svg').default}
+          src={require('@/assets/images/yologa-main-text.png').default}
+          alt="욜로가"
+          aria-label="app name"
           css={css`
           width: 100%;
           min-width: 217px;
