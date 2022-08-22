@@ -3,8 +3,6 @@ import { appHeaderHeight } from "./layout";
 
 const page = css`
   width: 100%;
-  min-width: 280px;
-  max-width: 690px;
   margin: auto;
   min-height: 100vh;
   min-height: calc(var(--vh) * 100);
