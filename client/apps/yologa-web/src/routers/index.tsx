@@ -1,26 +1,37 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, {PropsWithChildren, ReactNode} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Page404 from "../pages/404"
+import {getSuspendRouteMaker} from "@/routers/lib";
 
-import PageHome from "../pages/home";
-import PageSplash from "../pages/Splash";
-import PageSpaces from "../pages/spaces";
-import Page404 from "../pages/404";
-// const PageHome = React.lazy(() => import("../pages/Home"));
+const PageSplash = React.lazy(() => import('../pages/Splash'))
+const PageHome = React.lazy(() => import('../pages/home'))
+
+
 
 function createRoutes() {
+  const YologaSuspense = getSuspendRouteMaker(<>...loading</>);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={PageSplash && <PageSplash />}></Route>
-        <Route path="/home" element={PageHome && <PageHome />}></Route>
-        <Route path="/spaces" element={PageSpaces && <PageSpaces />}></Route>
-        <Route path="*" element={Page404 && <Page404 />}></Route>
+        <Route index element={
+          <YologaSuspense>
+            <PageSplash/>
+          </YologaSuspense>
+        }/>
+        <Route path='/home' element={
+          <YologaSuspense>
+            <PageHome/>
+          </YologaSuspense>
+        }/>
+        <Route path='*' element={
+          <YologaSuspense>
+            <Page404/>
+          </YologaSuspense>
+        }/>
       </Routes>
     </Router>
   );
 }
 
 export default createRoutes;
-
-// const Login = React.lazy(() => import('./views/Pages/Login'));
-// <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
